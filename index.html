@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radni staz - izracunavanje</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <img id="logo" src="assets/atom_logo_1.png" alt="logo-atom">
+    <h1>Izračunajte svoj radni staž</h1>
+    <div class="tabela-bg">
+
+    <table id="myTable">
+      <tr>
+        <th>datum prijave:</th>
+        <th>datum odjave:</th>
+        <th>razlika - staž</th>
+      </tr>
+      <tr>
+        <td><input id="prijava--0" name="start" type="date" value=""></td>
+        <td><input id="odjava--0" name="end" type="date" value=""></td>
+        <td><input id="holder--0" placeholder="staž unosa 1"></td>
+      </tr>
+      <tr>
+        <td>
+          <input id="prijava--1" name="start" type="date" value="">
+        </td>
+        <td>
+          <input id="odjava--1" name="end" type="date" value="">
+        </td>
+        <td><input id="holder--1" placeholder="staž unosa 2"></td>
+      </tr>
+      <tr>
+        <td><input id="prijava--2" name="start" type="date" value=""></td>
+        <td><input id="odjava--2" name="end" type="date" value=""></td>
+        <td><input id="holder--2" placeholder="staž unosa 3"></td>
+      </tr>
+      <tr>
+        <td><input id="prijava--3" name="start" type="date" value=""></td>
+        <td><input id="odjava--3" name="end" type="date" value=""></td>
+        <td><input id="holder--3" placeholder="staž unosa 4"></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td></td>
+        <td><button id="btnDodaj" onclick="addNewRow()">dodaj novi unos</button></td>
+      </tr>
+      <!-- <tr>
+        <td></td>
+        <td>UKUPNO:</td>
+        <td id="ukupno"></td>
+      </tr> -->
+    </table>
+    <div class="rezultat hidden">
+      <h5>Vaš radni staž je ukupno</h5>
+      <h4 id="ukupno"></h4>
+      <button id="printBtn" onclick="window.print()">štampaj</button>
+    </div>
+    
+    <button id="btnIzracunaj">izračunaj</button>
+    </div>
+
+    <div class="napomena">
+      <p>Napomena i uputstvo</p>
+    <p>Kalkulator za izračunavanje stečenog radnog staža funkcioniše na sledeći način:
+      <ul>
+        <li>za zadate datume prijave i odjave, računa se vremenska razlika obuhvatajući i prvi i poslednji dan;</li>
+        <li>ukoliko se u pojedinačnoj razlici staža pojavi 30 dana, oni će se u konačnom zbiru preliti u broj meseci;</li>
+        <li>ukupan staž predstavlja zbir svih stečenih godina, meseci i dana, gde se pri sabiranju 30 dana preliva u mesec itd...</li>
+        <li>ukoliko su Vam potrebne nove linije unosa, pritisnite ''dodaj novi unos''.</li>
+      </ul>
+    </p>
+    </div>
+    
+    
+    <script src="javascript.js"></script>
+    <script src="lib/moment/moment.min.js""></script>
+    <script src="lib/moment/moment-precise-range.js""></script>
+  </body>
+</html>
+      
